@@ -1,0 +1,75 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="first">First Name</label>
+        <input type="text" [(ngModel)]="user.firstname" 
+          class="form-control"
+          id="firstname"
+          name="first"
+          placeholder="Enter your First Name" 
+          required #firstname="ngModel">
+      </div>
+        <div [hidden]="!firstname.pristine" class="alert alert-danger">firstname is required</div>
+        
+    <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input type="text" [(ngModel)]="user.lastname" 
+          class="form-control"
+          id="lastname"
+          name="lastname"
+          placeholder="Enter your Last name" 
+          required #lastname="ngModel">
+      </div>    
+        <div [hidden]="!lastname.pristine" class="alert alert-danger">lastname is required</div>
+        
+    
+    <div class="form-group">
+        <label for="age">Age</label>
+        <input type="text" [(ngModel)]="user.age" 
+          class="form-control"
+          id="age"
+          name="age"
+          placeholder="Enter your age" 
+          required #age="ngModel">
+      </div>
+        <div [hidden]="!age.pristine" class="alert alert-danger">age is required</div>
+        
+    <div class="form-group">
+        <label for="jobtitle">Job Title</label>
+        <input type="text" [(ngModel)]="user.jobTitle" 
+          class="form-control"
+          id="jobtitle"
+          name="jobtitle"
+          placeholder="Enter your Job title" 
+          required #jobtitle="ngModel">
+      </div>
+        <div [hidden]="!jobtitle.pristine" class="alert alert-danger">jobtitle is required</div>
+        
+     <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" [(ngModel)]="user.startDate" 
+          class="form-control"
+          id="startDate"
+          name="startDate"
+          placeholder="Enter your Job Start Date" 
+          required #startDate="ngModel">
+      </div>
+        <div [hidden]="!startDate.pristine" class="alert alert-danger">startDate is required</div>
+        
+      <div class="form-group">
+        <label for="LastDate">Last Date</label>
+        <input type="date" [(ngModel)]="user.endDate" 
+          class="form-control"
+          id="lastDate"
+          name="LastDate"
+          placeholder="Enter your Job Last Date" 
+          required #lastDate="ngModel">
+      </div>
+         <div [hidden]="!lastDate.pristine" class="alert alert-danger">LastDate is required</div>
+        
+      <button type="submit" [disabled]="!userForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
